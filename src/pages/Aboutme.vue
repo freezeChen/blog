@@ -1,23 +1,26 @@
 <template>
-    <div id="about">
-        <zhead></zhead>
-    </div>
+
+    <h1>aboutme</h1>
+
 </template>
 
 <script>
-    import head from '../components/header'
+
 
     export default {
         name: "Aboutme",
-        components: {
-            'zhead': head,
-        },
+        components: {},
     }
 </script>
 
 <style scoped>
-    #about {
-        background: red;
-        height: 30%;
+    .tab {
+        background: #000020;
     }
+
+    .main {
+        height: 3320px;
+        background-color: grey;
+    }
+
 </style>
