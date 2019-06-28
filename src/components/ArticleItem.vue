@@ -1,19 +1,24 @@
 <template>
 
-    <div class="article-time">
+    <div>
 
-        <h1>{{time}} {{language}} {{author}}</h1>
-        <div>
-            :before
-            {{language}}
-        </div>
-    </div>
+        <el-row class="article-time">
+            <i class="date title-text">{{item.Time}}</i>
 
-    <div class="article-title">
 
-    </div>
+            <i class="language title-text">
+                &bull; {{item.Language}}
+            </i>
+            <i class="author title-text">
+                By {{item.Author}}
+            </i>
+        </el-row>
 
-    <div class="article-end">
+        <el-card v-html="item.Detail">
+            <!--          {{item.Detail}}-->
+
+        </el-card>
+
 
     </div>
 
@@ -23,16 +28,32 @@
 <script>
     export default {
         name: "ArticleItem",
-        data() {
-            return {
-                time: '',
-                language: '',
-                author: '',
-            }
-        }
+        props: ["item"],
+
     }
 </script>
 
 <style scoped>
 
+
+    .language {
+        text-transform: uppercase;
+    }
+
+    .author {
+        color: #ccc;
+    }
+
+    .article-time {
+        padding-left: 10px;
+        margin-bottom: 20px;
+
+
+    }
+
+    .article-title {
+    }
+
+    .article-end {
+    }
 </style>

@@ -6,13 +6,13 @@
                 <top></top>
             </el-header>
             <el-container id="main">
-                <el-main>
+                <el-main class="home">
                     <keep-alive>
                         <router-view></router-view>
                     </keep-alive>
                 </el-main>
                 <el-aside class="aside">
-                    <h1>侧边栏</h1>
+                    <tab/>
                 </el-aside>
             </el-container>
         </el-container>
@@ -23,11 +23,12 @@
 
 <script>
     import header from './components/header'
-    import ElPager from "element-ui/packages/pagination/src/pager"
+    import Tab from "./pages/tab"
 
     export default {
         name: 'app',
         components: {
+            Tab,
             "top": header
         },
     }
@@ -36,7 +37,7 @@
 <style>
 
     body {
-        background-color: lightgray;
+        background-color: #eee;
     }
 
     #main {
@@ -44,10 +45,20 @@
     }
 
     .aside {
-        background-color: azure;
         height: 100%;
         padding: 20px;
 
+    }
+
+    .title-text {
+        color: #999;
+        letter-spacing: 2px;
+        text-shadow: 0 1px #fff;
+        font-weight: bold;
+        line-height: 1em;
+        font-family: inherit;
+        font-style: normal;
+        padding-right: 8px;
     }
 
     #app {
